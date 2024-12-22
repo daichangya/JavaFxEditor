@@ -6,8 +6,6 @@ import org.fxmisc.richtext.StyleClassedTextArea;
 
 public class TestEditor extends Application {
 
-    private StyleClassedTextArea textArea;
-
     public static void main(String[] args) {
         launch(args);
     }

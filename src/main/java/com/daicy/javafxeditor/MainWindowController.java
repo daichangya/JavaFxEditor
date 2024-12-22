@@ -57,9 +57,6 @@ public class MainWindowController {
     private Button newButton, openButton, saveButton, saveAsButton, undoButton, redoButton, cutButton, copyButton,
             pasteButton, startButton, stopButton, onlineReferenceButton, aboutButton;
 
-    @FXML
-    private TextArea outputArea;
-
     public void init(Stage stage, AppStrategy appStrategy) {
         this.stage = stage;
         this.appStrategy = appStrategy;
@@ -231,20 +228,6 @@ public class MainWindowController {
         codeEditor.selectAll();
     }
 
-    @FXML
-    private void saveOutput(ActionEvent event) {
-        java.io.File chosenFile = outputFileChooser.showSaveDialog(stage);
-
-        if (chosenFile == null) {
-            return;
-        }
-
-        try {
-            Files.write(chosenFile.toPath(), outputArea.getText().getBytes());
-        } catch (IOException e) {
-            Alerts.showException(e);
-        }
-    }
 
     @FXML
     private void showSettings(ActionEvent event) {
