@@ -42,6 +42,7 @@ public class JavaFxWorkspace extends Workspace {
         try {
             String fileContent = new String(Files.readAllBytes(sourceFile.toPath()), StandardCharsets.UTF_8);
 //            codeEditor.setText(fileContent);
+            codeEditor.clear();
             codeEditor.replaceText(0, 0, fileContent);
             codeEditor.getUndoManager().forgetHistory();
             codeEditor.requestFocus();
